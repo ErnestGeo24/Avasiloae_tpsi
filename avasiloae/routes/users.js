@@ -3,7 +3,7 @@ const axios = require('axios');
 
 async function fetchUsers() {
     try {
-        const response = await axios.get('https://randomuser.me/api/?results=5&inc=gender,name,nat,id,location,picture');
+        const response = await axios.get('https://randomuser.me/api/?results=5&inc=gender,name,nat,id,location,picture,email');
         let users = response.data.results.map(user => ({
             gender: user.gender,
             name: `${user.name.first} ${user.name.last}`,
