@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title Profilo di #{user.name}
+  body
+    h1 #{user.name}
+    p Email: #{user.email}
+    p Città: #{user.city}
+    p Nazionalità: #{user.nat}
+    img(src=user.picture, alt="Foto di #{user.name}")
