@@ -38,4 +38,15 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+const usersRouter = require('./routes/users');
+const pagesRouter = require('./routes/pages');
+
+app.use('/rest', usersRouter);
+app.use('/pages', pagesRouter);
+
+app.use((req, res) => {
+  res.status(404).json({ error: 'Risorsa non trovata' });
+});
+
+
 module.exports = app;
